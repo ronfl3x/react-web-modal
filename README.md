@@ -1,14 +1,15 @@
-#React Web Modal
+# React Web Modal
+
 A simple react modal component with no dependencies that is easy to use and customize.
 Of course it comes with responsive styles out of the box.
 
-##Installation
+## Installation
 
 ```bash
 npm install react-web-modal
 ```
 
-##Usage
+## Usage
 
 ```javascript
 import React from "react";
@@ -37,6 +38,8 @@ function App() {
 }
 ```
 
+## Props
+
 | Prop              | Description                                                             | Type            | Default Value             | Required |
 | ----------------- | ----------------------------------------------------------------------- | --------------- | ------------------------- | -------- |
 | isVisible         | Controls the visibility of the modal                                    | boolean         |                           | Yes      |
@@ -54,5 +57,6 @@ function App() {
 | background        | Background color of the modal background                                | string          | "rgba(0,0,0,0.5)"         | No       |
 | modalBackground   | Background color of the modal                                           | string          | "white"                   | No       |
 
-##License
+## License
+
 MIT
