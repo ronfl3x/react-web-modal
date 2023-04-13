@@ -1,0 +1,28 @@
+{
+  "name": "react-web-modal",
+  "version": "1.0.0",
+  "description": "A simple react modal component for web, responsive and customizable.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronfl3x/react-web-modal.git"
+  },
+  "keywords": [
+    "react, modal, web, responsive, customizable"
+  ],
+  "author": "ronfl3x",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ronfl3x/react-web-modal/issues"
+  },
+  "homepage": "https://github.com/ronfl3x/react-web-modal#readme",
+  "devDependencies": {
+    "@types/react": "^18.0.35",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.0.4"
+  }
+}
