@@ -43,8 +43,11 @@ function App() {
             >
               Github
             </a>
-            <a href="" className="modal-button">
-              NPM
+            <a
+              href="https://www.npmjs.com/package/react-web-modal"
+              className="modal-button"
+            >
+              target="_blank" NPM
             </a>
           </div>
         </div>
