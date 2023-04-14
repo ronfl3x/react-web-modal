@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import "styles.css";
+import React, { useEffect, useRef, useState } from "react";
+import "./styles.css";
 
 interface Props {
   isVisible: boolean;
@@ -34,9 +34,20 @@ export function Modal({
   background = "rgba(0,0,0,0.5)",
   modalBackground = "white",
 }: Props) {
+  // UseState
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   // UseRef
   const modalBgRef = useRef<HTMLDivElement>(null);
   // UseEffect
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     if (lockScroll) {
       if (isVisible) {
@@ -49,7 +60,9 @@ export function Modal({
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (isVisible && closeOnEscape && e.key === "Escape") onClose();
+      if (isVisible && closeOnEscape && e.key === "Escape") {
+        setIsVisible(false);
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => {
@@ -59,8 +72,9 @@ export function Modal({
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (isVisible && closeOnBgClick && e.target === modalBgRef.current)
-        onClose();
+      if (isVisible && closeOnBgClick && e.target === modalBgRef.current) {
+        setIsVisible(false);
+      }
     };
     window.addEventListener("click", handleClickOutside);
     return () => {
@@ -91,7 +105,7 @@ export function Modal({
       {/* Modal */}
       <div
         style={{
-          maxWidth: maxWidth,
+          maxWidth: windowWidth < 768 ? "100%" : maxWidth,
           transitionDuration: `${animationDuration}ms`,
           background: modalBackground,
         }}

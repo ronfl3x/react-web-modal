@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import Modal from "./components/Modal";
+import { Modal } from "react-web-modal";
 import closeOutline from "./assets/close-outline.svg";
 
 function App() {
@@ -24,12 +24,7 @@ function App() {
       <button onClick={() => setIsVisible(true)} className="button">
         Open Modal
       </button>
-      <Modal
-        isVisible={isVisible}
-        setIsVisible={setIsVisible}
-        header={header}
-        maxWidth="600px"
-      >
+      <Modal isVisible={isVisible} setIsVisible={setIsVisible} header={header}>
         <div className="modal-container">
           <p className="modal-description">
             A simple, lightweight, and customizable modal component for React
@@ -40,14 +35,17 @@ function App() {
               href="https://github.com/ronfl3x/react-web-modal"
               target="_blank"
               className="modal-button"
+              referrerPolicy="no-referrer"
             >
               Github
             </a>
             <a
               href="https://www.npmjs.com/package/react-web-modal"
               className="modal-button"
+              target="_blank"
+              referrerPolicy="no-referrer"
             >
-              target="_blank" NPM
+              NPM
             </a>
           </div>
         </div>

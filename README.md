@@ -9,6 +9,10 @@ Of course it comes with responsive styles out of the box.
 npm install react-web-modal
 ```
 
+## Demo
+
+### [Open the demo in CodeSandbox](https://codesandbox.io/s/react-web-modal-tj6s6f?file=/src/App.js)
+
 ## Usage
 
 ```javascript
